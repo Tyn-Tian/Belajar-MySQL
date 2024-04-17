@@ -131,3 +131,151 @@ select
     p.quantity as Jumlah
 from
     products as p;
+
+INSERT INTO
+    products(id, category, name, price, quantity)
+VALUES
+    ('P006', 'Makanan', 'Bakso Rusuk', 25000, 200),
+    ('P007', 'Minuman', 'Es Jeruk', 10000, 300),
+    ('P008', 'Minuman', 'Es Campur', 15000, 500),
+    ('P009', 'Minuman', 'Es Teh Manis', 5000, 400),
+    ('P010', 'Lain-Lain', 'Kerupuk', 2500, 1000),
+    (
+        'P011',
+        'Lain-Lain',
+        'Keripik Udang',
+        10000,
+        300
+    ),
+    ('P012', 'Lain-Lain', 'Es Krim', 5000, 200),
+    ('P013', 'Makanan', 'Mie Ayam Jamur', 20000, 50),
+    ('P014', 'Makanan', 'Bakso Telor', 20000, 150),
+    ('P015', 'Makanan', 'Bakso Jando', 25000, 300);
+
+select
+    *
+from
+    products
+where
+    quantity > 100;
+
+select
+    *
+from
+    products
+where
+    quantity >= 100;
+
+select
+    *
+from
+    products
+where
+    category != "Makanan";
+
+select
+    *
+from
+    products
+where
+    category != "Minuman";
+
+select
+    *
+from
+    products
+where
+    quantity > 100
+    and price > 20000;
+
+select
+    *
+from
+    products
+where
+    category = "Makanan"
+    and price < 20000;
+
+select
+    *
+from
+    products
+where
+    quantity > 100
+    or price > 20000;
+
+select
+    *
+from
+    products
+where
+    (
+        category = "Makanan"
+        or quantity > 500
+    )
+    and price > 20000;
+
+select
+    *
+from
+    products
+where
+    name like "%mie%";
+
+select
+    *
+from
+    products
+where
+    name like "%bakso%";
+
+select
+    *
+from
+    products
+where
+    name like "%usu%";
+
+select
+    *
+from
+    products
+where
+    description is null;
+
+select
+    *
+from
+    products
+where
+    description is not null;
+
+select
+    *
+from
+    products
+where
+    price between 10000
+    and 20000;
+
+select
+    *
+from
+    products
+where
+    price not between 10000
+    and 20000;
+
+select
+    *
+from
+    products
+where
+    category in ("Makanan", "Minuman");
+
+select
+    *
+from
+    products
+where
+    category not in ("Makanan", "Minuman");
