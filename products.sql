@@ -97,3 +97,19 @@ set
     price = price - 3000
 where
     id = "P004";
+
+insert into
+    products(id, name, description, price, quantity)
+values
+    (
+        "P009",
+        "Mie Ayam Bakso Urat",
+        "Mie Ayam Original + Bakso Urat",
+        25000,
+        100
+    );
+
+delete from
+    products
+where
+    id = "P009";
