@@ -279,3 +279,23 @@ from
     products
 where
     category not in ("Makanan", "Minuman");
+
+select
+    id,
+    category,
+    name
+from
+    products
+order by
+    category;
+
+select
+    id,
+    category,
+    price,
+    name
+from
+    products
+order by
+    category asc,
+    price desc;
