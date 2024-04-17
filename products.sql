@@ -5,7 +5,8 @@ create table products (
     price int unsigned not null,
     quantity int unsigned not null default 0,
     created_at timestamp not null default current_timestamp,
-    primary key (id)
+    primary key (id),
+    constraint price_check check (price > 1000)
 ) engine = InnoDB;
 
 show tables;
@@ -507,3 +508,11 @@ group by
     category
 having
     total > 5;
+
+alter table
+    products
+add
+    constraint price_check check (price > 1000);
+
+alter table
+    products drop constraint price_check;
