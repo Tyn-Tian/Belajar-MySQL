@@ -335,3 +335,8 @@ order by
     id
 limit
     5, 5;
+
+select
+    distinct category
+from
+    products;
