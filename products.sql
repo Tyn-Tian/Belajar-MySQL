@@ -299,3 +299,39 @@ from
 order by
     category asc,
     price desc;
+
+select
+    *
+from
+    products
+order by
+    id
+limit
+    5;
+
+select
+    *
+from
+    products
+order by
+    id
+limit
+    3;
+
+select
+    *
+from
+    products
+order by
+    id
+limit
+    0, 5;
+
+select
+    *
+from
+    products
+order by
+    id
+limit
+    5, 5;
