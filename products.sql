@@ -545,3 +545,8 @@ from
     products
 where
     match(name, description) against("bakso" with query expansion);
+
+insert into
+    products(id, name, category, price, quantity)
+values
+    ("Pxxx", "Contoh", "Lain-lain", 1500, 100);
