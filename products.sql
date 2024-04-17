@@ -370,3 +370,11 @@ from
     products
 where
     price div 1000 > 15;
+
+select
+    id,
+    lower(name) as "Name Lower",
+    upper(name) as "Name Upper",
+    length(name) as "Name Length"
+from
+    products;
