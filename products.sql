@@ -401,4 +401,34 @@ select
     year(created_at),
     month(created_at)
 from
-    products
+    products;
+
+select
+    id,
+    category,
+    case
+        category
+        when "Makanan" then "Enak"
+        when "Minuman" then "Segar"
+        else "Apa itu?"
+    end as "Category"
+from
+    products;
+
+select
+    id,
+    price,
+    if(
+        price <= 15000,
+        "Murah",
+        if(price <= 20000, "Mahal", "Mahal Banget")
+    ) as "Mahal?"
+from
+    products;
+
+select
+    id,
+    name,
+    ifnull(description, "Kosong")
+from
+    products;
