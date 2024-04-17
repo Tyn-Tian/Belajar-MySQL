@@ -378,3 +378,27 @@ select
     length(name) as "Name Length"
 from
     products;
+
+select
+    id,
+    created_at,
+    extract(
+        year
+        from
+            created_at
+    ) as Year,
+    extract(
+        month
+        from
+            created_at
+    ) as Month
+from
+    products;
+
+select
+    id,
+    created_at,
+    year(created_at),
+    month(created_at)
+from
+    products
