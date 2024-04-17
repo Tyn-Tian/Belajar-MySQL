@@ -457,3 +457,53 @@ select
     sum(quantity) as "Total Stock"
 from
     products;
+
+select
+    count(id) as "Total Product",
+    category
+from
+    products
+group by
+    category;
+
+select
+    max(price) as "Product Termahal",
+    category
+from
+    products
+group by
+    category;
+
+select
+    min(price) as "Product Termurah",
+    category
+from
+    products
+group by
+    category;
+
+select
+    avg(price) as "Rata-rata Harga",
+    category
+from
+    products
+group by
+    category;
+
+select
+    sum(quantity) as "Total Stock",
+    category
+from
+    products
+group by
+    category;
+
+select
+    count(id) as total,
+    category
+from
+    products
+group by
+    category
+having
+    total > 5;
