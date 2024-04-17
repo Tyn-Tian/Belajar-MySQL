@@ -47,3 +47,24 @@ alter table
     products
 add
     primary key (id);
+
+select
+    *
+from
+    products
+where
+    price = "16000";
+
+select
+    *
+from
+    products
+where
+    id = "P001";
+
+select
+    *
+from
+    products
+where
+    name = "mie ayam bakso";
