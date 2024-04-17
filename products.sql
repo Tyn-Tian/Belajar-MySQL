@@ -432,3 +432,28 @@ select
     ifnull(description, "Kosong")
 from
     products;
+
+select
+    count(id) as "Total Product"
+from
+    products;
+
+select
+    max(price) as "Product Termahal"
+from
+    products;
+
+select
+    min(price) as "Product Termurah"
+from
+    products;
+
+select
+    avg(price) as "Rata-rata Harga"
+from
+    products;
+
+select
+    sum(quantity) as "Total Stock"
+from
+    products;
