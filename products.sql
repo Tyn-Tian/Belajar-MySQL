@@ -6,7 +6,7 @@ create table products (
     quantity int unsigned not null default 0,
     created_at timestamp not null default current_timestamp,
     primary key (id),
-    constraint price_check check (price > 1000)
+    constraint price_check check (price > 1000).fulltext products_search (name, description)
 ) engine = InnoDB;
 
 show tables;
@@ -516,3 +516,32 @@ add
 
 alter table
     products drop constraint price_check;
+
+alter table
+    products
+add
+    fulltext products_search (name, description);
+
+alter table
+    products drop index products_search;
+
+select
+    *
+from
+    products
+where
+    match(name, description) against("ayam" in natural language mode);
+
+select
+    *
+from
+    products
+where
+    match(name, description) against("+ayam -bakso" in boolean mode);
+
+select
+    *
+from
+    products
+where
+    match(name, description) against("bakso" with query expansion);
