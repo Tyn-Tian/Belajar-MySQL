@@ -113,3 +113,21 @@ delete from
     products
 where
     id = "P009";
+
+select
+    id as Kode,
+    name as Nama,
+    category as Kategori,
+    price as Harga,
+    quantity as Jumlah
+from
+    products;
+
+select
+    p.id as Kode,
+    p.name as Nama,
+    p.category as Kategori,
+    p.price as Harga,
+    p.quantity as Jumlah
+from
+    products as p;
