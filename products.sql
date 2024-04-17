@@ -68,3 +68,32 @@ from
     products
 where
     name = "mie ayam bakso";
+
+alter table
+    products
+add
+    column category enum("Makanan", "Minuman", "Lain-lain")
+after
+    name;
+
+update
+    products
+set
+    category = "Makanan"
+where
+    id = "P001";
+
+update
+    products
+set
+    category = "Makanan",
+    description = "Mie Ayam Original + Ceker"
+where
+    id = "P002";
+
+update
+    products
+set
+    price = price - 3000
+where
+    id = "P004";
