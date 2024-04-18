@@ -97,3 +97,31 @@ from
     left join guestbooks on (guestbooks.email = customers.email)
 where
     guestbooks.email is null;
+
+start transaction;
+
+insert into
+    guestbooks (email, title, content)
+values
+    ("contoh@gmail.com", "Contoh", "Conntoh"),
+    ("contoh2@gmail.com", "Contoh", "Conntoh"),
+    ("contoh3@gmail.com", "Contoh", "Conntoh");
+
+select
+    *
+from
+    guestbooks;
+
+commit;
+
+start transaction;
+
+delete from
+    guestbooks;
+
+select
+    *
+from
+    guestbooks;
+
+rollback;
