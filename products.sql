@@ -557,3 +557,15 @@ values
     ("X001", "X Satu", 25000, 200),
     ("X002", "X Dua", 100000, 300),
     ("X003", "X Tiga", 15000, 500);
+
+select
+    *
+from
+    products
+where
+    price > (
+        select
+            avg(price)
+        from
+            products
+    );
