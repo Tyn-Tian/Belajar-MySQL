@@ -550,3 +550,10 @@ insert into
     products(id, name, category, price, quantity)
 values
     ("Pxxx", "Contoh", "Lain-lain", 1500, 100);
+
+insert into
+    products(id, name, price, quantity)
+values
+    ("X001", "X Satu", 25000, 200),
+    ("X002", "X Dua", 100000, 300),
+    ("X003", "X Tiga", 15000, 500);

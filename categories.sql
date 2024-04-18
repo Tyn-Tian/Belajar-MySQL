@@ -84,3 +84,64 @@ select
 from
     products
     join categories on (categories.id = products.id_category);
+
+select
+    *
+from
+    categories;
+
+insert into
+    categories(id, name)
+values
+    ("C004", "Oleh-Oleh"),
+    ("C005", "Elektronik");
+
+select
+    *
+from
+    categories
+    inner join products on (products.id_category = categories.id);
+
+select
+    *
+from
+    categories
+    left join products on (products.id_category = categories.id);
+
+select
+    *
+from
+    categories
+    right join products on (products.id_category = categories.id);
+
+create table numbers (id int not null, primary key (id)) engine = InnoDB;
+
+insert into
+    numbers
+values
+    (1),
+    (2),
+    (3),
+    (4),
+    (5),
+    (6),
+    (7),
+    (8),
+    (9),
+    (10);
+
+select
+    *
+from
+    numbers;
+
+select
+    numbers1.id,
+    numbers2.id,
+    (numbers1.id * numbers2.id)
+from
+    numbers as numbers1
+    cross join numbers as numbers2
+order by
+    numbers1.id,
+    numbers2.id;
