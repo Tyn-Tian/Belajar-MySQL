@@ -1,21 +1,21 @@
-create table orders (
+CREATE TABLE orders (
     id int not null auto_increment,
     total int not null,
     order_date datetime not null default current_timestamp,
-    primary key (id)
+    PRIMARY KEY (id)
 ) engine = InnoDB;
 
-desc orders;
+DESC orders;
 
-create table orders_detail (
+CREATE TABLE orders_detail (
     id_product varchar(10) not null,
     id_order int not null,
     price int not null,
     quantity int not null,
-    primary key (id_product, id_order)
+    PRIMARY KEY (id_product, id_order)
 ) engine = InnoDB;
 
-desc orders_detail;
+DESC orders_detail;
 
 ALTER TABLE
     orders_detail
@@ -29,43 +29,43 @@ ADD
 
 SHOW CREATE TABLE orders_detail;
 
-insert into
+INSERT INTO
     orders(total)
-values
+VALUES
     (36000);
 
-select
+SELECT
     *
-from
+FROM
     orders;
 
-insert into
+INSERT INTO
     orders_detail(id_product, id_order, price, quantity)
-values
+VALUES
     ("P001", 1, 25000, 1),
     ("P002", 1, 25000, 1),
     ("P003", 2, 25000, 1),
     ("P004", 3, 25000, 1);
 
-select
+SELECT
     *
-from
+FROM
     orders_detail;
 
-select
+SELECT 
     *
-from
+FROM
     orders
-    join orders_detail on (orders_detail.id_order = orders.id)
-    join products on (products.id = orders_detail.id_product);
+    JOIN orders_detail ON (orders_detail.id_order = orders.id)
+    JOIN products ON (products.id = orders_detail.id_product);
 
-select
+SELECT 
     orders.id,
     products.id,
     products.name,
     orders_detail.quantity,
     orders_detail.price
-from
+FROM
     orders
-    join orders_detail on (orders_detail.id_order = orders.id)
-    join products on (products.id = orders_detail.id_product);
+    JOIN orders_detail ON (orders_detail.id_order = orders.id)
+    JOIN products ON (products.id = orders_detail.id_product);
